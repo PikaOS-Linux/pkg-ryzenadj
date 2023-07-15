@@ -3,3 +3,10 @@ export DH_VERBOSE = 1
 
 %:
 	dh $@
+
+override_dh_install:
+	dh_install --
+	install -Dsm 755 obj-x86_64-linux-gnu/ryzenadj debian/ryzenadj/usr/bin/ryzenadj
+	install -Dsm 744 obj-x86_64-linux-gnu/libryzenadj.so  debian/ryzenadj/usr/lib/$(DEB_HOST_MULTIARCH)/libryzenadj.so
+	install -Dm 744 lib/ryzenadj.h debian/ryzenadj/usr/include/ryzenadj.h
+	ln -sfv /usr/bin/ryzenadj debian/ryzenadj/usr/sbin/ryzenadj
