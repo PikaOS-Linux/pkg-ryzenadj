@@ -3,7 +3,7 @@ Section: admin
 Priority: optional
 Maintainer: ferreo <harderthanfire@gmail.com>
 Standards-Version: 4.6.1
-Build-Depends: debhelper-compat (= 13)
+Build-Depends: debhelper-compat (= 13), build-essential, dh-cmake, cmake, pkgconfig, libpci-dev
 Rules-Requires-Root: no
 
 Package: ryzenadj
